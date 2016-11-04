@@ -4,17 +4,17 @@ function Controller(model) {
 		var p = new Pet(name);
 		model.addPet(p);
 		return p;
-	}
+	};
 
 	this.playWithPet = function(name, amount) {
 		var p = model.getPetByName(name);
 		p.play(amount);
 		return p;
-	}
+	};
 
 	this.getAllPets = function() {
 		return model.getAllPets();
-	}
+	};
 	// start BCD
 	this.feedPet = function(name, amount) {
 		var p = model.getPetByName(name);
@@ -22,7 +22,7 @@ function Controller(model) {
 		return p;
 	// end BCD
 	
-	}
+	};
 	// ** TODO **
 	// need to get all pets and for each
 	// this.hungryBored = function()

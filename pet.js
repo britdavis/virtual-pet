@@ -10,16 +10,26 @@ function Pet(name) {
 
 
 	this.feed = function(food) {
-		this.hunger -= food;
-		this.fun -= food / 2;
-	}
+		if (this.hunger > this.hungerMin) {
+			this.hunger -= food;
+			this.fun -= food / 2;
+		}
+		if (this.hunger <= this.hungerMin) {
+			alert("Stop feeding me!");
+		}
+	};
 
 	this.play = function(fun) {
 		if (this.fun < this.funMax) {
 			this.fun += fun;
-		}	
-		if (this.hunger < this.hungerMax) {
-			this.hunger += fun / 2;
+			this.hunger += fun /2;
 		}
-	}
+		if (this.fun >= this.funMax) {
+			alert("Stop playing with me!");
+		}
+
+		// if (this.hunger < this.hungerMax) {
+		// 	this.hunger += fun / 2;
+		// }
+	};
 }
